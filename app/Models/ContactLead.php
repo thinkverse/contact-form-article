@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ContactLead extends Model
 {
     use HasFactory;
+
+    /** @var array $guarded */
+    protected $guarded = [];
 }

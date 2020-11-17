@@ -15,6 +15,11 @@ class CreateContactLeadsTable extends Migration
     {
         Schema::create('contact_leads', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone')->nullable();
+            $table->unsignedTinyInteger('preferred')->default(0);
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
