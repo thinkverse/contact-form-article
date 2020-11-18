@@ -42,6 +42,16 @@ class ContactForm extends Component
      */
     public int $preferred = 0;
 
+    /**
+     * Submit contact lead
+     *
+     * @return void
+     */
+    public function submit()
+    {
+        // Here lies an empty Livewire action.
+    }
+
     public function render()
     {
         return view('livewire.contact-form');

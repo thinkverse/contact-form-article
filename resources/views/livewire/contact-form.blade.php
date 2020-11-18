@@ -1,5 +1,5 @@
 <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-    <form wire:submit.prevent="" class="flex flex-col">
+    <form wire:submit.prevent="submit" class="flex flex-col">
         <label for="name" class="block">
             <span class="text-gray-700">Name</span>
             <input class="block w-full mt-1 form-input" wire:model="name" placeholder="Sherlock Holmes" id="name" type="text" autocomplete="off" required>
