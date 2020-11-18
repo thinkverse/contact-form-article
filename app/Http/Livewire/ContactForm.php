@@ -43,13 +43,35 @@ class ContactForm extends Component
     public int $preferred = 0;
 
     /**
+     * Validation rules
+     *
+     * @var array
+     */
+    protected $rules = [
+        'name' => 'required|size:3',
+        'email' => 'required|email|size:4',
+        'phone' => 'nullable|size:4|required_if:preferred,1',
+        'message' => 'nullable',
+        'preferred' => 'required|min:0|max:1'
+    ];
+
+    /**
+     * Validation messages
+     *
+     * @var array
+     */
+    protected $messages = [
+        'phone.required_if' => 'We need a number to call when the preferred way of contact is by phone.',
+    ];
+
+    /**
      * Submit contact lead
      *
      * @return void
      */
     public function submit()
     {
-        // Here lies an empty Livewire action.
+        $this->validate();
     }
 
     public function render()
