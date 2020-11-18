@@ -7,6 +7,7 @@
     <title>Contact Us</title>
 
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.9.6/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/custom-forms@^0.2.0/dist/custom-forms.min.css" />
 
     <livewire:styles />
 </head>
@@ -21,7 +22,7 @@
 
             <div class="mt-8 overflow-hidden bg-white shadow sm:rounded-lg">
                 <div class="grid grid-cols-1">
-                    {{-- Here's where our Livewire component will live. --}}
+                    <livewire:contact-form />
                 </div>
             </div>
 
