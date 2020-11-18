@@ -48,9 +48,9 @@ class ContactForm extends Component
      * @var array
      */
     protected $rules = [
-        'name' => 'required|size:3',
-        'email' => 'required|email|size:4',
-        'phone' => 'nullable|size:4|required_if:preferred,1',
+        'name' => 'required|min:3',
+        'email' => 'required|email|min:4',
+        'phone' => 'nullable|min:4|required_if:preferred,1',
         'message' => 'nullable',
         'preferred' => 'required|min:0|max:1'
     ];
