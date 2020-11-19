@@ -75,6 +75,10 @@ class ContactForm extends Component
         $validated = $this->validate();
 
         (new EmailContactLeadAction)($validated);
+
+        session()->flash('contact-lead-message', 'Your infomation has been saved.');
+
+        redirect()->to('/contact');
     }
 
     public function render()

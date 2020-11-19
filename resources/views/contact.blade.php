@@ -12,6 +12,14 @@
     <livewire:styles />
 </head>
 <body class="antialiased">
+    <div class="fixed top-0 left-0 z-10 mt-4 ml-4">
+        @if (session()->has('contact-lead-message'))
+        <div class="px-4 py-2 text-sm font-semibold text-green-900 bg-green-500 border border-green-600 rounded-md">
+            {{ session('contact-lead-message') }}
+        </div>
+        @endif
+    </div>
+
     <div class="relative flex justify-center min-h-screen bg-gray-100 items-top sm:items-center sm:pt-0">
         <div class="w-full max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="mt-8 ml-4">
