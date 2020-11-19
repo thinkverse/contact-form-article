@@ -1,11 +1,13 @@
 @component('mail::message')
-# Introduction
+# Hurray, a new contact lead! 🎉
 
-The body of your message.
+__Name:__ {{ $lead->name }}<br>
+__Email:__ {{ $lead->email }}<br>
+__Phone:__ {{ $lead->phone }}<br>
+__Preferred:__ {{ $lead->preferred }}<br>
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
+__Message__<br>
+{{ $lead->message }}
 
 Thanks,<br>
 {{ config('app.name') }}
