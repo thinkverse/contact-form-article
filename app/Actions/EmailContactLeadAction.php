@@ -22,7 +22,7 @@ class EmailContactLeadAction
     }
 
     /**
-     * get or create new ContactLead model
+     * Get or create new ContactLead model
      *
      * @param array $formData
      * @return ContactLead
@@ -32,6 +32,12 @@ class EmailContactLeadAction
         return ContactLead::firstOrCreate($formData);
     }
 
+    /**
+     * Send a new email notification
+     *
+     * @param ContactLead $contactLead
+     * @return void
+     */
     private function sendContactLeadToEmail(ContactLead $contactLead): void
     {
         Mail::to(['new-contact-lead@contact-form.test'])
