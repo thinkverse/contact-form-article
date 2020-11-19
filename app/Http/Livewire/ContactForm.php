@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Actions\EmailContactLeadAction;
 use Livewire\Component;
 
 class ContactForm extends Component
@@ -71,7 +72,9 @@ class ContactForm extends Component
      */
     public function submit()
     {
-        $this->validate();
+        $validated = $this->validate();
+
+        (new EmailContactLeadAction)($validated);
     }
 
     public function render()
