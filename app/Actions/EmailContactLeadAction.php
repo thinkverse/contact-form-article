@@ -41,6 +41,6 @@ class EmailContactLeadAction
     private function sendContactLeadToEmail(ContactLead $contactLead): void
     {
         Mail::to(['new-contact-lead@contact-form.test'])
-            ->send(new ContactLeadMailable($contactLead));
+            ->queue(new ContactLeadMailable($contactLead));
     }
 }
